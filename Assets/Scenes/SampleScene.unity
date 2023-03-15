@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d297b5f8fe9444c89bed6101be536089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stageTextAsset: {fileID: 4900000, guid: e637c80f2a4804be18d2629c6cc516eb, type: 3}
 --- !u!4 &1994172865
 Transform:
   m_ObjectHideFlags: 0
