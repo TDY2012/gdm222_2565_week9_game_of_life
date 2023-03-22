@@ -133,6 +133,8 @@ public class GameOfLife : MonoBehaviour
 
     public void ResetCell()
     {
+        this._gamePhase = GamePhaseEnum.SETUP;
+        
         for(int i=0; i<this._cellStatusArray.GetLength(0); i++)
         {
             for(int j=0; j<this._cellStatusArray.GetLength(1); j++)
@@ -148,6 +150,8 @@ public class GameOfLife : MonoBehaviour
 
     public void ProgressCell()
     {
+        this._gamePhase = GamePhaseEnum.PLAY;
+
         CellStatus[,] nextCellStatusArray = new CellStatus[this._cellStatusArray.GetLength(0), this._cellStatusArray.GetLength(1)];
         
         int adjAliveCellCount;
