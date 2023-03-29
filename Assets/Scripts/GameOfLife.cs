@@ -174,15 +174,15 @@ public class GameOfLife : MonoBehaviour
                     {
                         nextCellStatusArray[i + 1, j + 1] = new CellStatus(
                             false,
-                            this._cellArray[i + 1, j + 1].isFixed(),
-                            this._cellArray[i + 1, j + 1].isTarget()
+                            this._cellArray[i + 1, j + 1].IsFixed(),
+                            this._cellArray[i + 1, j + 1].IsTarget()
                         );
                     }
                     else if(adjAliveCellCount >= 2 && adjAliveCellCount <= 3)
                     {
                         nextCellStatusArray[i + 1, j + 1] = new CellStatus(
                             true,
-                            this._cellArray[i + 1, j + 1].isFixed(),
+                            this._cellArray[i + 1, j + 1].IsFixed(),
                             false
                         );
                     }
@@ -190,8 +190,8 @@ public class GameOfLife : MonoBehaviour
                     {
                         nextCellStatusArray[i + 1, j + 1] = new CellStatus(
                             false,
-                            this._cellArray[i + 1, j + 1].isFixed(),
-                            this._cellArray[i + 1, j + 1].isTarget()
+                            this._cellArray[i + 1, j + 1].IsFixed(),
+                            this._cellArray[i + 1, j + 1].IsTarget()
                         );
                     }
                 }
@@ -201,7 +201,7 @@ public class GameOfLife : MonoBehaviour
                     {
                         nextCellStatusArray[i + 1, j + 1] = new CellStatus(
                             true,
-                            this._cellArray[i + 1, j + 1].isFixed(),
+                            this._cellArray[i + 1, j + 1].IsFixed(),
                             false
                         );
                     }
@@ -209,8 +209,8 @@ public class GameOfLife : MonoBehaviour
                     {
                         nextCellStatusArray[i + 1, j + 1] = new CellStatus(
                             false,
-                            this._cellArray[i + 1, j + 1].isFixed(),
-                            this._cellArray[i + 1, j + 1].isTarget()
+                            this._cellArray[i + 1, j + 1].IsFixed(),
+                            this._cellArray[i + 1, j + 1].IsTarget()
                         );
                     }
                 }
@@ -249,7 +249,7 @@ public class GameOfLife : MonoBehaviour
                 if(Physics.Raycast(selectionRay, out selection))
                 {
                     Cell selectedCell = selection.transform.gameObject.GetComponent<Cell>();
-                    if(!selectedCell.isFixed())
+                    if(!selectedCell.IsFixed())
                     {
                         selectedCell.ToggleStatus();
                     }
