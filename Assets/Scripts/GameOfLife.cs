@@ -150,6 +150,11 @@ public class GameOfLife : MonoBehaviour
 
     public void ProgressCell()
     {
+        if(this._gamePhase == GamePhaseEnum.OVER)
+        {
+            return;
+        }
+        
         this._gamePhase = GamePhaseEnum.PLAY;
 
         CellStatus[,] nextCellStatusArray = new CellStatus[this._cellStatusArray.GetLength(0), this._cellStatusArray.GetLength(1)];
@@ -228,6 +233,26 @@ public class GameOfLife : MonoBehaviour
                 );
             }
         }
+
+        if(this.IsGameOver())
+        {
+            this._gamePhase = GamePhaseEnum.OVER;
+        }
+    }
+
+    bool IsGameOver()
+    {
+        for(int i=0; i<this._cellArray.GetLength(0) - 2; i++)
+        {
+            for(int j=0; j<this._cellArray.GetLength(1) - 2; j++)
+            {
+                if(this._cellArray[i + 1, j + 1].IsTarget())
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     void Start()
